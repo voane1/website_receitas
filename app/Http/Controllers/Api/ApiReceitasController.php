@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use App\Models\Receitas;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -46,19 +47,7 @@ class ApiReceitasController extends Controller
      */
     public function store(Request $request)
     {
-        //$this->validate($request, $this->receitas->rules());
-        $request->validate([
-            'nome_receita'=> 'required' ,
-            'pais'=> 'required',
-            'url_imagem_receita' => 'image',
-            'ingredientes_receita'=> 'required',
-            'preparo_receita'=> 'required',
-            'url_video'=> 'required',
-            'id_utilizador'=> 'required',
-            'tempo_preparo'=> 'required'
-
-        ]);
-
+        $this->validate($request, $this->receitas->rules());
         $dataForm = $request->all();
 
       if ($request->hasFile('url_imagem_receita') && $request->file('url_imagem_receita')->isValid()) {
@@ -81,11 +70,16 @@ class ApiReceitasController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show($id)
     {
-        //
+
+       if (!$data = $this->receitas->find($id)){
+           return response()->json(['erro'=>'Nada foi encontrado!'],400);
+       }else{
+           return response()->json($data);
+       }
     }
 
     /**
@@ -115,10 +109,17 @@ class ApiReceitasController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
-        //
+        if (!$data = $this->receitas->find($id))
+            return response()->json(['erro'=>'Nada foi encontrado!'],400);
+        if($data->url_imagem_receita){
+            Storage::disk('public')->delete("\\imagens\\$data->url_imagem_receita");
+        }
+
+        $data->delete();
+        return response()->json(['Success'=> 'Deletado com Sucesso']);
     }
 }

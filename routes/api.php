@@ -21,8 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::post('receitas',[ApiReceitasController::class, 'store']);
-//Route::apiResource('user', ApiUtilizadorControllerR::class);
+//Route::post('receitas',[ApiReceitasController::class, 'store']);
+//Route::get('receitas/{id}', [ApiReceitasController::class, 'show']);
+Route::apiResource('receitas', ApiReceitasController::class);
 
 
 

@@ -14,7 +14,7 @@ class CreateReceitasTable extends Migration
     public function up()
     {
         Schema::create('receitas', function (Blueprint $table) {
-            $table->id('id_receitas')->unique();
+            $table->id()->unique();
             $table->string('nome_receita',250);
             $table->string('pais',250);
             $table->string('url_imagem_receita',250)->nullable();

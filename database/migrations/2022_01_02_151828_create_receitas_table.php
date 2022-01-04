@@ -21,7 +21,7 @@ class CreateReceitasTable extends Migration
             $table->string('ingredientes_receita',250);
             $table->string('preparo_receita',250);
             $table->string('url_video',250)->nullable();
-            $table->integer('id_utilizador');
+            $table->integer('id_utilizador')->references('id')->on('receitas')->onUpdate('cascade')->onDelete('cascade');
             $table->string('tempo_preparo',250);
             $table->timestamps();
         });

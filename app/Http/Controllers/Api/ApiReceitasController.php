@@ -23,5 +23,15 @@ class ApiReceitasController extends MasterApiController
 
     }
 
+    public function utilizador($id){
+
+        if (!$data = $this->model->with('utilizador')->find($id)){
+            return response()->json(['erro'=>'Nada foi encontrado!'],400);
+        }else{
+            return response()->json($data);
+        }
+
+    }
+
 
 }

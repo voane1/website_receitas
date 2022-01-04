@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Receitas;
 
 class Utilizador extends Model
 {
@@ -33,6 +34,11 @@ class Utilizador extends Model
 
 
         ];
+    }
+
+    public function receitas(){
+        return $this->hasMany(Receitas::class, 'id_utilizador', 'id');
+
     }
 
 

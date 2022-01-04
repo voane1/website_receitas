@@ -25,5 +25,15 @@ class ApiUtilizadorControllerR extends MasterApiController
 
     }
 
+    public function receitas($id){
+
+        if (!$data = $this->model->with('receitas')->find($id)){
+            return response()->json(['erro'=>'Nada foi encontrado!'],400);
+        }else{
+            return response()->json($data);
+        }
+
+    }
+
 
 }

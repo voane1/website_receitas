@@ -22,7 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::apiResource('utilizador', ApiUtilizadorControllerR::class);
+Route::get('utilizador/{id}/receitas', [ApiUtilizadorControllerR::class, 'receitas']);
 Route::apiResource('receitas', ApiReceitasController::class);
+Route::get('receitas/{id}/utilizador', [ApiReceitasController::class, 'utilizador']);
 Route::apiResource('like', \App\Http\Controllers\Api\ApiLikeController::class);
 Route::apiResource('comentario', \App\Http\Controllers\Api\ApiComentariosController::class);
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Utilizador;
 
 class Receitas extends Model
 {
@@ -40,5 +41,11 @@ class Receitas extends Model
             'tempo_preparo'=> 'required'
 
         ];
+    }
+
+    public function utilizador(){
+        return $this->belongsTo(Utilizador::class, 'id_utilizador', 'id');
+
+
     }
 }

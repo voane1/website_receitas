@@ -21,9 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-//Route::post('receitas',[ApiReceitasController::class, 'store']);
-//Route::get('receitas/{id}', [ApiReceitasController::class, 'show']);
+Route::apiResource('utilizador', ApiUtilizadorControllerR::class);
 Route::apiResource('receitas', ApiReceitasController::class);
+Route::apiResource('like', \App\Http\Controllers\Api\ApiLikeController::class);
+Route::apiResource('comentario', \App\Http\Controllers\Api\ApiComentariosController::class);
+
 
 
 

@@ -25,6 +25,7 @@ class Receitas extends Model
         'tempo_preparo',
 
 
+
     ];
 
     public function rules(){

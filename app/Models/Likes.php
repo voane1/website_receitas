@@ -18,7 +18,14 @@ class Likes extends Model
         return[
             'id_receita'=> 'required ',
             'id_utilizador'=> 'required '
-
         ];
+    }
+
+    public function utilizador(){
+        return $this->belongsTo(Utilizador::class, 'id_utilizador', 'id');
+    }
+
+    public function receitas(){
+        return $this->belongsTo(Receitas::class, 'id_receita', 'id');
     }
 }

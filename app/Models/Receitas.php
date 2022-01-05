@@ -46,6 +46,15 @@ class Receitas extends Model
     public function utilizador(){
         return $this->belongsTo(Utilizador::class, 'id_utilizador', 'id');
 
+    }
+
+    public function likes(){
+        return $this->hasMany(Likes::class, 'id_receita', 'id');
+
+    }
+
+    public function comentarios(){
+        return $this->hasMany(Comentarios::class, 'id_receita', 'id');
 
     }
 }

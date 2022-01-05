@@ -26,4 +26,13 @@ class Comentarios extends Model
         ];
     }
 
+    public function utilizador(){
+        return $this->belongsTo(Utilizador::class, 'id_utilizador', 'id');
+
+    }
+    public function receitas (){
+        return $this->belongsTo(Receitas::class, 'id_receita', 'id');
+
+    }
+
 }

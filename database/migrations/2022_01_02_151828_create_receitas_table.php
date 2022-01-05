@@ -21,10 +21,15 @@ class CreateReceitasTable extends Migration
             $table->string('ingredientes_receita',250);
             $table->string('preparo_receita',250);
             $table->string('url_video',250)->nullable();
-            $table->integer('id_utilizador')->references('id')->on('receitas')->onUpdate('cascade')->onDelete('cascade');
             $table->string('tempo_preparo',250);
             $table->timestamps();
         });
+
+        Schema::table('receitas', function (Blueprint $table) {
+            $table->unsignedBigInteger('id_utilizador');
+            $table->foreign('id_utilizador')->references('id')->on('utilizadors')->onUpdate('cascade')->onDelete('cascade');;
+        });
+
     }
 
     /**

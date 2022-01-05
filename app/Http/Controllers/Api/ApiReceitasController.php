@@ -33,5 +33,25 @@ class ApiReceitasController extends MasterApiController
 
     }
 
+    public function likes($id){
+
+        if (!$data = $this->model->with('likes')->find($id)){
+            return response()->json(['erro'=>'Nada foi encontrado!'],400);
+        }else{
+            return response()->json($data);
+        }
+
+    }
+
+    public function comentarios($id){
+
+        if (!$data = $this->model->with('comentarios')->find($id)){
+            return response()->json(['erro'=>'Nada foi encontrado!'],400);
+        }else{
+            return response()->json($data);
+        }
+
+    }
+
 
 }

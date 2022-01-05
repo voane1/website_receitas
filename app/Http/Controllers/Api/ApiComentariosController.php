@@ -22,4 +22,23 @@ class ApiComentariosController extends MasterApiController
         $this->request = $request;
 
     }
+
+    public function utilizador($id){
+
+        if (!$data = $this->model->with('utilizador')->find($id)){
+            return response()->json(['erro'=>'Nada foi encontrado!'],400);
+        }else{
+            return response()->json($data);
+        }
+
+    }
+    public function receitas($id){
+
+        if (!$data = $this->model->with('receitas')->find($id)){
+            return response()->json(['erro'=>'Nada foi encontrado!'],400);
+        }else{
+            return response()->json($data);
+        }
+
+    }
 }

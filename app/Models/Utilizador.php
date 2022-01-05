@@ -41,6 +41,16 @@ class Utilizador extends Model
 
     }
 
+    public function likes(){
+        return $this->hasMany(Likes::class, 'id_utilizador', 'id');
+
+    }
+
+    public function comentarios(){
+        return $this->hasMany(Comentarios::class, 'id_utilizador', 'id');
+
+    }
+
 
 
 }

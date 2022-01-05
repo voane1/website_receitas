@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\ApiComentariosController;
+use App\Http\Controllers\Api\ApiLikeController;
 use App\Http\Controllers\Api\ApiReceitasController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,12 +31,12 @@ Route::apiResource('receitas', ApiReceitasController::class);
 Route::get('receitas/{id}/utilizador', [ApiReceitasController::class, 'utilizador']);
 Route::get('receitas/{id}/likes', [ApiReceitasController::class, 'likes']);
 Route::get('receitas/{id}/comentarios', [ApiReceitasController::class, 'comentarios']);
-Route::apiResource('likes', \App\Http\Controllers\Api\ApiLikeController::class);
-Route::get('likes/{id}/utilizador', [\App\Http\Controllers\Api\ApiLikeController::class, 'utilizador']);
-Route::get('likes/{id}/receitas', [\App\Http\Controllers\Api\ApiLikeController::class, 'receitas']);
-Route::apiResource('comentarios', \App\Http\Controllers\Api\ApiComentariosController::class);
-Route::get('comentarios/{id}/utilizador', [\App\Http\Controllers\Api\ApiComentariosController::class, 'utilizador']);
-Route::get('comentarios/{id}/receitas', [\App\Http\Controllers\Api\ApiComentariosController::class, 'receitas']);
+Route::apiResource('likes', ApiLikeController::class);
+Route::get('likes/{id}/utilizador', [ApiLikeController::class, 'utilizador']);
+Route::get('likes/{id}/receitas', [ApiLikeController::class, 'receitas']);
+Route::apiResource('comentarios', ApiComentariosController::class);
+Route::get('comentarios/{id}/utilizador', [ApiComentariosController::class, 'utilizador']);
+Route::get('comentarios/{id}/receitas', [ApiComentariosController::class, 'receitas']);
 
 
 

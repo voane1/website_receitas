@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use  App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReceitasController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/','HomeController@index');
+//Auth::routes();
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/minhasReceitas', [ReceitasController::class, 'index']);
+Route::get('/inserirReceitas', [ReceitasController::class, 'store']);
+
+
 
 Route::get('user', function (){
 

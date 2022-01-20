@@ -15,13 +15,13 @@
         <div class="div-right">
             <nav>
                 <ul>
-                    <a href="#">
+                    <a href="/">
                         <li>Home</li>
                     </a>
                     <a href="">
                         <li>Gerir Perfil</li>
                     </a>
-                    <a href="minhas-receitas/index.html">
+                    <a href="{{URL('/minhasReceitas')}}">
                         <li>Minhas Receitas</li>
                     </a>
                     <a href="">

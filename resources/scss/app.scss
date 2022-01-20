@@ -1,0 +1,239 @@
+p, ul {
+    margin: 0;
+}
+h1 {
+    text-align: center;
+    color: #EEABA4;
+}
+textarea {
+    width: 100%;
+}
+button {
+    background: transparent;
+    border: none;
+}
+[type=search] {
+    border: 1px solid #666;
+}
+.cont-menu {
+    width: 100%;
+    background-color: #A0E4F1;
+}
+.div-right {
+    display: flex;
+    align-items: center;
+}
+.div-right img{
+    width: 45px !important;
+    height: 45px;
+    border-radius: 70px;
+}
+.box-login {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    border-left: 1px solid #666;
+    padding-left: 15px;
+    text-align: center;
+}
+.box-login a{
+    font-size: 12px;
+}
+.div-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.div-menu img {
+    width: 125px;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+}
+nav ul li {
+    padding-left: 15px;
+}
+
+/* Home */
+.cont-item-receitas {
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+}
+.cont-item-receitas:first-child {
+    margin-top: 0;
+}
+.box-img-receita{
+    width: 255px;
+    height: 170px;
+}
+.box-receitas {
+    width: 520px;
+    padding-left: 15px;
+}
+.cont-receita {
+    border: 1px solid #666;
+    padding: 15px;
+    border-radius: 5px;
+}
+.interacao {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 17px;
+}
+.cont-form-comment {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.cont-form-comment p {
+    width: 100%;
+    margin-right: 15px;
+    border:1px solid #666;
+    padding-left: 15px;
+}
+.input-search {
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 55px;
+}
+.input-search button {
+    background: transparent;
+    border: none;
+}
+/* ./Home */
+
+.item-receita{
+    width: 100%;
+    background-color: #f9f9f9;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(204,204,204,1);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(204,204,204,1);
+    box-shadow: 5px 5px 5px 0px rgba(204,204,204,1);
+    border-radius: 5px 5px 5px 5px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+}
+.btn-default {
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+
+    background-color: #EEABA4;
+    color: #fff;
+    border: 1px solid #EEABA4;
+    border-radius: 20px;
+    padding: 5px 25px;
+}
+.btn-default:hover {
+    background-color: #F69186;
+    border: 1px solid #F69186;
+}
+
+.btn-icon {
+    border: none;
+    background: transparent;
+}
+.btn-edit {
+    width: 36px;
+    height: 36px;
+    background-color: mediumseagreen;
+    border-radius: 5px;
+}
+.btn-delete {
+    width: 36px;
+    height: 36px;
+    background-color: lightcoral;
+    border-radius: 5px;
+}
+
+
+/* Editar Receitas  */
+
+.cont-geral {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.img-receita {
+    width: 30%;
+    padding: 15px;
+    text-align: center;
+}
+.img-receita img {
+    width: 100%;
+}
+.cont-right {
+    width: 70%;
+    padding: 15px;
+}
+.cont-btn {
+    margin-top: 20px;
+}
+.btn-back {
+    border: 1px solid #F69186;
+    border-radius: 20px;
+    background-color: transparent;
+    padding: 5px 35px;
+}
+.btn-back:hover {
+    background-color: #F69186;
+    color: #fff;
+}
+.btn-save{
+    background-color: #EEABA4;
+    color: #fff;
+    border: 1px solid #EEABA4;
+    border-radius: 20px;
+    padding: 5px 35px;
+}
+.btn-save:hover {
+    background-color: #F69186;
+    border: 1px solid #F69186;
+}
+
+/* ./Editar Receitas  */
+
+
+/* Resultado de pesquisa */
+.cont-result-category {
+    display: flex;
+    margin-top: 55px;
+}
+.box-category {
+    width: 150px;
+    height: 200px;
+    border: 1px solid #666;
+    margin-right: 15px;
+}
+.box-category p {
+    border: 1px solid #666;
+}
+.list-category ul {
+    list-style: none;
+    padding-left: 15px;
+}
+.container-receitas {
+    display: flex;
+    height: 650px;
+    overflow-y: scroll;
+    flex-direction: column;
+    padding-right: 15px;
+    padding-bottom: 55px;
+}
+
+/* ./Resultado de pesquisa */
+
+/* Receita após pesquisa */
+
+.ingredientes-receita, .preparo-receita {
+    border: 1px solid #666;
+    padding: 15px;
+    margin-top: 15px;
+}
+.ingredientes-receita {
+    margin-top: 0;
+}

@@ -21,8 +21,11 @@ use App\Http\Controllers\ReceitasController;
 //Auth::routes();
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/minhasReceitas', [ReceitasController::class, 'index']);
-Route::get('/inserirReceitas', [ReceitasController::class, 'store']);
-
+Route::delete('/minhasReceitas/{id}', [ReceitasController::class, 'destroy']);
+Route::get('/editReceitas/{id}', [ReceitasController::class, 'edit']);
+//Route::put('editReceitas/{id}',[ReceitasController::class, 'update']);
+Route::get('/inserirReceitas', [ReceitasController::class, 'create']);
+Route::post('/inserirReceitas', [ReceitasController::class, 'store']);
 
 
 Route::get('user', function (){

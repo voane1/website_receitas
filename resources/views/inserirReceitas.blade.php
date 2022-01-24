@@ -30,7 +30,7 @@
                 </ul>
             </nav>
             <div class="box-login">
-                <img src="../person.jpg" alt="Icon Person" width="666">
+                <img src="{{URL('imagens/person.jpg')}}" alt="Icon Person" width="666">
                 <a href="">Logout</a>
             </div>
         </div>
@@ -40,46 +40,78 @@
 
 <main class="container">
     <h1>Inserir Receitas</h1>
-
     <!-- div geral -->
     <div class="cont-geral">
         <!-- imagem da receita -->
-        <div class="img-receita">
+        <form action="/inserirReceitas/" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="img-receita">
             <!-- Imagem vem do banco -->
-            <img src="../img-receita.jpg" alt="Imagem ilustrativa da receita" width="300px">
-            <button class="btn-default">Inserir imagem</button>
-        </div>
+                <input
+                    type="file" class="block shadow-5xl mb-10 p-2 w-80 italic" name="url_imagem_receita" >
+            </div>
         <!-- div posição direita -->
-        <div class="cont-right">
+            <div class="cont-right">
             <!-- ingredientes e modo de preparo -->
-            <div class="box-ingredientes">
+                    <div class="box-ingredientes">
                 <!-- ingredientes -->
-                <div class="ingredientes">
-                    <h4>Ingredientes</h4>
+                        <div class="ingredientes">
+                            <h4>Utilizador</h4>
+                            <!-- Buscar valores atraves do PHP -->
+                            <input type="text" id="id_utilizador" name="id_utilizador">
+                        </div>
+                        <div class="ingredientes">
+                            <h4>Nome Receita</h4>
+                            <!-- Buscar valores atraves do PHP -->
+                            <textarea name="nome_receita" id="nome_receita" rows="1" cols="20" class="form-control" required>
+                        </textarea>
+                        </div>
+                        <div class="ingredientes">
+                            <h4>País</h4>
+                            <!-- Buscar valores atraves do PHP -->
+                            <textarea name="pais" id="pais" rows="1">
+                        </textarea>
+                        </div>
+                        <div class="ingredientes">
+                            <h4>Ingredientes</h4>
                     <!-- Buscar valores atraves do PHP -->
-                    <form>
-              <textarea name="ingredientes" id="ingredientes" rows="7">
+                        <textarea name="ingredientes_receita" id="ingredientes_receita" rows="7">
 
-              </textarea>
-                    </form>
-                </div>
+                        </textarea>
+                        </div>
+                        <div class="ingredientes">
+                            <h4>Tempo Preparo</h4>
+                            <!-- Buscar valores atraves do PHP -->
+                            <textarea name="tempo_preparo" id="tempo_preparo" rows="1">
+                        </textarea>
+                        </div>
+
                 <!-- modo de preparo -->
-                <div class="preparo">
-                    <h4>Modo de preparo</h4>
+                        <div class="preparo">
+                            <h4>Modo de preparo</h4>
                     <!-- Buscar valores atraves do PHP -->
-                    <form>
-              <textarea name="preparo" id="preparo" rows="7">
 
-              </textarea>
-                    </form>
-                </div>
-            </div>
+                    <textarea name="preparo_receita" id="preparo_receita" rows="7">
+
+                    </textarea>
+
+                        </div>
+                        <div class="preparo">
+                            <h4>Link Vídeo</h4>
+                            <!-- Buscar valores atraves do PHP -->
+                            <textarea name="url_video" id="url_video" rows="1">
+                        </textarea>
+                        </div>
+                    </div>
             <!-- botões -->
-            <div class="cont-btn">
-                <button class="btn-back">Voltar</button>
-                <button class="btn-save">Salvar</button>
-            </div>
-        </div>
+                <div class="cont-btn">
+                    <a href="{{URL('/minhasReceitas')}}" >
+                    <button class="btn-back">Voltar</button>
+                    </a>
+                    <button type="submit" class="btn-save">Salvar</button>
+                </div>
+        </form>
+    </div>
         <!-- ./div posição direita -->
 
     </div>

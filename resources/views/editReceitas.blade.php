@@ -11,6 +11,7 @@
 <!-- Menu -->
 <div class="cont-menu">
     <div class="div-menu container">
+
         <img src="{{URL('imagens/logo.jpg')}}" alt="Logo" width="200">
         <div class="div-right">
             <nav>
@@ -34,6 +35,8 @@
                 <a href="">Logout</a>
             </div>
         </div>
+
+
     </div>
 </div>
 <!-- ./Menu -->
@@ -44,6 +47,10 @@
     <!-- div geral -->
     <div class="cont-geral">
         <!-- imagem da receita -->
+    <form action="/minhasReceitas/{{$receita->id}}" method="post" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
+
         <div class="img-receita">
             <!-- Imagem vem do banco -->
             <img src="../img-receita.jpg" alt="Imagem ilustrativa da receita" width="300px">
@@ -82,6 +89,7 @@
         </div>
         <!-- ./div posição direita -->
 
+    </form>
     </div>
 
 </main>

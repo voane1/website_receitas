@@ -5,6 +5,8 @@ use App\Models\Receitas;
 
 use App\Models\Utilizador;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use function Sodium\add;
 
 class HomeController extends Controller
 {
@@ -25,8 +27,24 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $receitas = Receitas::get();
-        $user = Utilizador::get();
-        return view('welcome', compact('receitas', 'user'));
+        $receitas = DB::table('receitas')
+            ->leftJoin('utilizadors', 'utilizadors.id', '=', 'receitas.id_utilizador')
+            ->leftJoin('comentarios', 'comentarios.id_receita', '=', 'receitas.id')
+            ->get();
+        //dd($receitas);
+
+        return view('welcome', compact('receitas'));
+    }
+
+    public function consulta(Request $request)   {
+
+
+
+        $consulta = $request->get('nome_receita');
+
+        $resultado = Receitas::where('nome_receita', 'like', '%'.$consulta.'%')->get();
+       // dd($resultado);
+
+        return view('/resultadoPesquisa',compact('resultado', 'consulta'));
     }
 }

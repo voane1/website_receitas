@@ -53,41 +53,67 @@
 
         <div class="img-receita">
             <!-- Imagem vem do banco -->
-            <img src="../img-receita.jpg" alt="Imagem ilustrativa da receita" width="300px">
-            <button class="btn-default">Alterar imagem</button>
+            <!-- Imagem da receita -->
+            <img src="/storage/imagens/{{ $receita->url_imagem_receita }}" alt="Imagem da receita" class="box-img-receita">
+            <input
+                type="file" class="block shadow-5xl mb-10 p-2 w-80 italic" name="url_imagem_receita"  >
         </div>
         <!-- div posição direita -->
         <div class="cont-right">
             <!-- ingredientes e modo de preparo -->
             <div class="box-ingredientes">
                 <!-- ingredientes -->
+               <div class="ingredientes">
+                    <h4>Nome Receita</h4>
+                    <!-- Buscar valores atraves do PHP -->
+                    <input name="nome_receita" id="nome_receita" value="{{ $receita->nome_receita }}" class="form-control" required>
+
+                </div>
+                <div class="ingredientes">
+                    <h4>País</h4>
+                    <!-- Buscar valores atraves do PHP -->
+                    <input name="pais" id="pais" value="{{ $receita->pais }}">
+
+                </div>
                 <div class="ingredientes">
                     <h4>Ingredientes</h4>
                     <!-- Buscar valores atraves do PHP -->
-                    <form>
-              <textarea name="ingredientes" id="ingredientes" rows="7">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              </textarea>
-                    </form>
+                    <textarea name="ingredientes_receita" id="ingredientes_receita" rows="7">
+                    {{ $receita->ingredientes_receita }}
+                        </textarea>
                 </div>
+                <div class="ingredientes">
+                    <h4>Tempo Preparo</h4>
+                    <!-- Buscar valores atraves do PHP -->
+                    <input name="tempo_preparo" id="tempo_preparo" value="{{ $receita->tempo_preparo }}">
+
+                </div>
+
                 <!-- modo de preparo -->
                 <div class="preparo">
                     <h4>Modo de preparo</h4>
                     <!-- Buscar valores atraves do PHP -->
-                    <form>
-              <textarea name="preparo" id="preparo" rows="7">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              </textarea>
-                    </form>
+
+                    <textarea name="preparo_receita" id="preparo_receita" rows="7">
+                     {{ $receita->preparo_receita }}
+                    </textarea>
+
+                </div>
+                <div class="preparo">
+                    <h4>Link Vídeo</h4>
+                    <!-- Buscar valores atraves do PHP -->
+                    <textarea name="url_video" id="url_video" rows="2">
+                    {{ $receita->url_video}}
+                    </textarea>
                 </div>
             </div>
             <!-- botões -->
             <div class="cont-btn">
-                <button class="btn-back">Voltar</button>
-                <button class="btn-save">Salvar</button>
+                <a href="{{URL('/minhasReceitas')}}" >
+                    <button class="btn-back">Voltar</button>
+                </a>
+                <button type="submit" class="btn-save">Salvar</button>
             </div>
-        </div>
-        <!-- ./div posição direita -->
 
     </form>
     </div>

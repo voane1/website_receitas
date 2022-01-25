@@ -19,13 +19,24 @@ use App\Http\Controllers\ReceitasController;
 
 //Route::get('/','HomeController@index');
 //Auth::routes();
+
+//pagina inicial
 Route::get('/', [HomeController::class, 'index']);
+
+//minhas receitas
 Route::get('/minhasReceitas', [ReceitasController::class, 'index']);
+//excluir Receitas
 Route::delete('/minhasReceitas/{id}', [ReceitasController::class, 'destroy']);
+//editar Receitas
 Route::get('/editReceitas/{id}', [ReceitasController::class, 'edit']);
-//Route::put('editReceitas/{id}',[ReceitasController::class, 'update']);
+Route::put('/minhasReceitas/{id}',[ReceitasController::class, 'update']);
+//inserir Receitas
 Route::get('/inserirReceitas', [ReceitasController::class, 'create']);
 Route::post('/inserirReceitas', [ReceitasController::class, 'store']);
+
+//consulta geral
+Route::get('/resultadoPesquisa/', [HomeController::class, 'consulta']);
+
 
 
 Route::get('user', function (){

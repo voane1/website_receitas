@@ -27,10 +27,9 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $receitas = DB::table('receitas')
-            ->leftJoin('utilizadors', 'utilizadors.id', '=', 'receitas.id_utilizador')
-            ->leftJoin('comentarios', 'comentarios.id_receita', '=', 'receitas.id')
-            ->get();
+        $receitas = Receitas::join('utilizadors', 'utilizadors.id', '=', 'receitas.id_utilizador')
+                       ->get(['receitas.*', 'utilizadors.nome']);
+
         //dd($receitas);
 
         return view('welcome', compact('receitas'));
@@ -38,12 +37,10 @@ class HomeController extends Controller
 
     public function consulta(Request $request)   {
 
-
-
         $consulta = $request->get('nome_receita');
 
         $resultado = Receitas::where('nome_receita', 'like', '%'.$consulta.'%')->get();
-       // dd($resultado);
+       //dd($resultado);
 
         return view('/resultadoPesquisa',compact('resultado', 'consulta'));
     }

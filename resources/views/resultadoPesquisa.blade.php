@@ -62,7 +62,9 @@
                 <div class="box-receitas">
                     <!-- Receita -->
                     <div class="cont-receita">
+                    <a href="/itemPesquisa/{{ $resultado->id }}">
                         <h4>{{ $resultado->nome_receita }}</h4>
+                    </a>
                         <p>País: {{ $resultado->pais }}</p>
                         <p>By: {{ $resultado->id_utilizador }}</p>
                         <div class="interacao">

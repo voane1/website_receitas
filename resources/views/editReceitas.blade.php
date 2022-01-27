@@ -78,7 +78,7 @@
                 <div class="ingredientes">
                     <h4>Ingredientes</h4>
                     <!-- Buscar valores atraves do PHP -->
-                    <textarea name="ingredientes_receita" id="ingredientes_receita" rows="7">
+                    <textarea name="ingredientes_receita" id="ingredientes_receita" rows="20">
                     {{ $receita->ingredientes_receita }}
                         </textarea>
                 </div>
@@ -94,7 +94,7 @@
                     <h4>Modo de preparo</h4>
                     <!-- Buscar valores atraves do PHP -->
 
-                    <textarea name="preparo_receita" id="preparo_receita" rows="7">
+                    <textarea name="preparo_receita" id="preparo_receita" rows="20">
                      {{ $receita->preparo_receita }}
                     </textarea>
 

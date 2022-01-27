@@ -17,9 +17,6 @@ use App\Http\Controllers\ReceitasController;
 |
 */
 
-//Route::get('/','HomeController@index');
-//Auth::routes();
-
 //pagina inicial
 Route::get('/', [HomeController::class, 'index']);
 
@@ -33,14 +30,12 @@ Route::put('/minhasReceitas/{id}',[ReceitasController::class, 'update']);
 //inserir Receitas
 Route::get('/inserirReceitas', [ReceitasController::class, 'create']);
 Route::post('/inserirReceitas', [ReceitasController::class, 'store']);
-
 //consulta geral
 Route::get('/resultadoPesquisa/', [HomeController::class, 'consulta']);
+//item
+Route::get('/itemPesquisa/{id}', [ReceitasController::class, 'item']);
 
 
 
-Route::get('user', function (){
 
-   return "usuario ";
-});
 

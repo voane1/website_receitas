@@ -113,4 +113,13 @@ class ReceitasController extends Controller
         return view('/resultadoPesquisa',compact('resultado'));
 
     }*/
+
+    public function item(Request $request, $id){
+
+        $receita = Receitas::findOrFail($id);
+        //dd($receita);
+
+
+        return view('/itemPesquisa', compact('receita'));
+    }
 }

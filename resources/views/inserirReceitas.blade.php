@@ -63,7 +63,7 @@
                         <div class="ingredientes">
                             <h4>Nome Receita</h4>
                             <!-- Buscar valores atraves do PHP -->
-                            <textarea name="nome_receita" id="nome_receita" rows="1" cols="20" class="form-control" required>
+                            <textarea name="nome_receita" id="nome_receita" rows="1" cols="10" class="form-control" required>
                         </textarea>
                         </div>
                         <div class="ingredientes">
@@ -75,7 +75,7 @@
                         <div class="ingredientes">
                             <h4>Ingredientes</h4>
                     <!-- Buscar valores atraves do PHP -->
-                        <textarea name="ingredientes_receita" id="ingredientes_receita" rows="7">
+                        <textarea name="ingredientes_receita" id="ingredientes_receita" rows="10">
 
                         </textarea>
                         </div>
@@ -91,7 +91,7 @@
                             <h4>Modo de preparo</h4>
                     <!-- Buscar valores atraves do PHP -->
 
-                    <textarea name="preparo_receita" id="preparo_receita" rows="7">
+                    <textarea name="preparo_receita" id="preparo_receita" rows="10">
 
                     </textarea>
 
@@ -99,7 +99,7 @@
                         <div class="preparo">
                             <h4>Link Vídeo</h4>
                             <!-- Buscar valores atraves do PHP -->
-                            <textarea name="url_video" id="url_video" rows="1">
+                            <textarea name="url_video" id="url_video" rows="2">
                         </textarea>
                         </div>
                     </div>
